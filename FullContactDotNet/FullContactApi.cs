@@ -44,7 +44,7 @@ namespace FullContactDotNet
         /// <param name="emailAddress">The email address.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A email address is required to lookup a person by email.</exception>
-        public Person LookupByEmail(string emailAddress)
+        public Person LookupPersonByEmail(string emailAddress)
         {
             if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("A email address is required to lookup a person by email.");
 
@@ -60,7 +60,7 @@ namespace FullContactDotNet
         /// <param name="countryCode">The country code.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A phone number is required to lookup a person by twitter.</exception>
-        public Person LookupByPhone(string phoneNumber, string countryCode = null)
+        public Person LookupPersonByPhone(string phoneNumber, string countryCode = null)
         {
             if (string.IsNullOrEmpty(phoneNumber)) throw new ArgumentNullException("A phone number is required to lookup a person by twitter.");
 
@@ -83,7 +83,7 @@ namespace FullContactDotNet
         /// <param name="twitterUsername">The twitter username.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A twitter username is required to lookup a person by twitter.</exception>
-        public Person LookupByTwitter(string twitterUsername)
+        public Person LookupPersonByTwitter(string twitterUsername)
         {
             if (string.IsNullOrEmpty(twitterUsername)) throw new ArgumentNullException("A twitter username is required to lookup a person by twitter.");
 
@@ -98,7 +98,7 @@ namespace FullContactDotNet
         /// <param name="facebookUsername">The facebook username.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A facebook username is required to lookup a person by facebook.</exception>
-        public Person LookupByFacebook(string facebookUsername)
+        public Person LookupPersonByFacebook(string facebookUsername)
         {
             if (string.IsNullOrEmpty(facebookUsername)) throw new ArgumentNullException("A facebook username is required to lookup a person by facebook.");
 
