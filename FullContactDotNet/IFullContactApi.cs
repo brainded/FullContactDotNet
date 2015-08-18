@@ -1,9 +1,4 @@
 ﻿using FullContactDotNet.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullContactDotNet
 {
@@ -15,6 +10,14 @@ namespace FullContactDotNet
         /// <param name="emailAddress">The email address.</param>
         /// <returns></returns>
         Person LookupByEmail(string emailAddress);
+
+        /// <summary>
+        /// Lookups the by phone.
+        /// </summary>
+        /// <param name="phoneNumber">The phone number.</param>
+        /// <param name="countryCode">The country code.</param>
+        /// <returns></returns>
+        Person LookupByPhone(string phoneNumber, string countryCode = null);
 
         /// <summary>
         /// Lookups the by twitter.

@@ -1,14 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullContactDotNet.Entities
+﻿namespace FullContactDotNet.Entities
 {
     public class Chat
     {
+        /// <summary>
+        /// Gets or sets the client.
+        /// </summary>
+        /// <value>
+        /// The client.
+        /// </value>
         public string Client { get; set; }
+
+        /// <summary>
+        /// Gets or sets the handle.
+        /// </summary>
+        /// <value>
+        /// The handle.
+        /// </value>
         public string Handle { get; set; }
     }
 }

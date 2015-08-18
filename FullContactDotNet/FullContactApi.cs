@@ -6,8 +6,19 @@ namespace FullContactDotNet
 {
     public class FullContactApi : IFullContactApi
     {
+        /// <summary>
+        /// The API base URL
+        /// </summary>
         private const string ApiBaseUrl = "https://api.fullcontact.com/v2";
+
+        /// <summary>
+        /// The API key
+        /// </summary>
         private string ApiKey;
+
+        /// <summary>
+        /// The FullContact client
+        /// </summary>
         private RestClient FullContactClient;
 
         /// <summary>
@@ -28,7 +39,7 @@ namespace FullContactDotNet
         }
 
         /// <summary>
-        /// Lookups the by email.
+        /// Lookup Person by email address.
         /// </summary>
         /// <param name="emailAddress">The email address.</param>
         /// <returns></returns>
@@ -43,7 +54,31 @@ namespace FullContactDotNet
         }
 
         /// <summary>
-        /// Lookups the by twitter.
+        /// Lookup Person by phone number.
+        /// </summary>
+        /// <param name="phoneNumber">The phone number.</param>
+        /// <param name="countryCode">The country code.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A phone number is required to lookup a person by twitter.</exception>
+        public Person LookupByPhone(string phoneNumber, string countryCode = null)
+        {
+            if (string.IsNullOrEmpty(phoneNumber)) throw new ArgumentNullException("A phone number is required to lookup a person by twitter.");
+
+            //TODO: investigate if the phone number needs to be formatted in a particular way
+
+            var request = new RestRequest("/person.json", Method.GET);
+            request.AddParameter("phone", phoneNumber);
+
+            if (!string.IsNullOrWhiteSpace(countryCode))
+            {
+                request.AddParameter("countryCode", countryCode);
+            }
+
+            return Execute<Person>(request);
+        }
+
+        /// <summary>
+        /// Lookup Person by twitter username.
         /// </summary>
         /// <param name="twitterUsername">The twitter username.</param>
         /// <returns></returns>
@@ -58,7 +93,7 @@ namespace FullContactDotNet
         }
 
         /// <summary>
-        /// Lookups the by facebook.
+        /// Lookup Person by facebook username.
         /// </summary>
         /// <param name="facebookUsername">The facebook username.</param>
         /// <returns></returns>
@@ -73,7 +108,7 @@ namespace FullContactDotNet
         }
 
         /// <summary>
-        /// Gets the client.
+        /// Gets the FullContact client.
         /// </summary>
         /// <returns></returns>
         private RestClient GetClient()
@@ -88,7 +123,7 @@ namespace FullContactDotNet
         }
 
         /// <summary>
-        /// Executes the specified request.
+        /// Executes the specified FullContact request.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="request">The request.</param>

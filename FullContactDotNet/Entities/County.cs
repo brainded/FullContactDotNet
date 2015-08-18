@@ -1,15 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullContactDotNet.Entities
+﻿namespace FullContactDotNet.Entities
 {
     public class County
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="County"/> is deduced.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if deduced; otherwise, <c>false</c>.
+        /// </value>
         public bool Deduced { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the code.
+        /// </summary>
+        /// <value>
+        /// The code.
+        /// </value>
         public string Code { get; set; }
     }
 }
