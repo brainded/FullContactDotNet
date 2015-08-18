@@ -54,6 +54,7 @@
     <Compile Include="Entities\County.cs" />
     <Compile Include="Entities\Demographics.cs" />
     <Compile Include="Entities\DigitalFootprint.cs" />
+    <Compile Include="Entities\DisposableEmailResponse.cs" />
     <Compile Include="Entities\FullContactResponse.cs" />
     <Compile Include="Entities\LocationDeduced.cs" />
     <Compile Include="Entities\Organization.cs" />
@@ -64,11 +65,13 @@
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Entities\Website.cs" />
     <Compile Include="FullContactApi.cs" />
+    <Compile Include="FullContactEmailApi.cs" />
     <Compile Include="FullContactPersonApi.cs" />
     <Compile Include="FullContactApiException.cs" />
     <Compile Include="FullContactConfiguration.cs" />
+    <Compile Include="IFullContactEmailApi.cs" />
     <Compile Include="IFullContactPersonApi.cs" />
-    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\PersonResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

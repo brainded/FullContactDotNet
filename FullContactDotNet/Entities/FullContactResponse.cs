@@ -13,14 +13,6 @@ namespace FullContactDotNet.Entities
         public HttpStatusCode Status { get; set; }
 
         /// <summary>
-        /// Gets or sets the request identifier.
-        /// </summary>
-        /// <value>
-        /// The request identifier.
-        /// </value>
-        public string RequestId { get; set; }
-
-        /// <summary>
         /// Gets or sets the message.
         /// </summary>
         /// <value>

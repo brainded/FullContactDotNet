@@ -2,8 +2,16 @@
 
 namespace FullContactDotNet.Entities
 {
-    public class Person : FullContactResponse
+    public class PersonResponse : FullContactResponse
     {
+        /// <summary>
+        /// Gets or sets the request identifier.
+        /// </summary>
+        /// <value>
+        /// The request identifier.
+        /// </value>
+        public string RequestId { get; set; }
+
         /// <summary>
         /// Gets or sets the likelihood that the person provided matches the person requested.
         /// </summary>

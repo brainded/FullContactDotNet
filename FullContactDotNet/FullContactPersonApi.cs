@@ -25,13 +25,13 @@ namespace FullContactDotNet
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A email address is required to lookup a person by email.</exception>
-        public Person LookupPersonByEmail(string emailAddress, int? queue = null, string webhookUrl = null)
+        public PersonResponse LookupPersonByEmail(string emailAddress, int? queue = null, string webhookUrl = null)
         {
             if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("A email address is required to lookup a person by email.");
 
             var request = GetPersonRequest(queue, webhookUrl);
             request.AddParameter("email", emailAddress);
-            return Execute<Person>(request);
+            return Execute<PersonResponse>(request);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace FullContactDotNet
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A phone number is required to lookup a person by twitter.</exception>
-        public Person LookupPersonByPhone(string phoneNumber, string countryCode = null, int? queue = null, string webhookUrl = null)
+        public PersonResponse LookupPersonByPhone(string phoneNumber, string countryCode = null, int? queue = null, string webhookUrl = null)
         {
             if (string.IsNullOrEmpty(phoneNumber)) throw new ArgumentNullException("A phone number is required to lookup a person by twitter.");
 
@@ -57,7 +57,7 @@ namespace FullContactDotNet
                 request.AddParameter("countryCode", countryCode);
             }
 
-            return Execute<Person>(request);
+            return Execute<PersonResponse>(request);
         }
 
         /// <summary>
@@ -68,13 +68,13 @@ namespace FullContactDotNet
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A twitter username is required to lookup a person by twitter.</exception>
-        public Person LookupPersonByTwitter(string twitterUsername, int? queue = null, string webhookUrl = null)
+        public PersonResponse LookupPersonByTwitter(string twitterUsername, int? queue = null, string webhookUrl = null)
         {
             if (string.IsNullOrEmpty(twitterUsername)) throw new ArgumentNullException("A twitter username is required to lookup a person by twitter.");
 
             var request = GetPersonRequest(queue, webhookUrl);
             request.AddParameter("twitter", twitterUsername);
-            return Execute<Person>(request);
+            return Execute<PersonResponse>(request);
         }
 
         /// <summary>
@@ -85,13 +85,13 @@ namespace FullContactDotNet
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A facebook username is required to lookup a person by facebook.</exception>
-        public Person LookupPersonByFacebook(string facebookUsername, int? queue = null, string webhookUrl = null)
+        public PersonResponse LookupPersonByFacebook(string facebookUsername, int? queue = null, string webhookUrl = null)
         {
             if (string.IsNullOrEmpty(facebookUsername)) throw new ArgumentNullException("A facebook username is required to lookup a person by facebook.");
 
             var request = GetPersonRequest(queue, webhookUrl);
             request.AddParameter("facebookUsername", facebookUsername);
-            return Execute<Person>(request);
+            return Execute<PersonResponse>(request);
         }
 
         /// <summary>

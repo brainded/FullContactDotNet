@@ -11,7 +11,7 @@ namespace FullContactDotNet
         /// <param name="queue">The queue.</param>
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
-        Person LookupPersonByEmail(string emailAddress, int? queue = null, string webhookUrl = null);
+        PersonResponse LookupPersonByEmail(string emailAddress, int? queue = null, string webhookUrl = null);
 
         /// <summary>
         /// Lookup Person by phone number.
@@ -21,7 +21,7 @@ namespace FullContactDotNet
         /// <param name="queue">The queue.</param>
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
-        Person LookupPersonByPhone(string phoneNumber, string countryCode = null, int? queue = null, string webhookUrl = null);
+        PersonResponse LookupPersonByPhone(string phoneNumber, string countryCode = null, int? queue = null, string webhookUrl = null);
 
         /// <summary>
         /// Lookup Person by twitter username.
@@ -30,7 +30,7 @@ namespace FullContactDotNet
         /// <param name="queue">The queue.</param>
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
-        Person LookupPersonByTwitter(string twitterUsername, int? queue = null, string webhookUrl = null);
+        PersonResponse LookupPersonByTwitter(string twitterUsername, int? queue = null, string webhookUrl = null);
 
         /// <summary>
         /// Lookup Person by facebook username.
@@ -39,6 +39,6 @@ namespace FullContactDotNet
         /// <param name="queue">The queue.</param>
         /// <param name="webhookUrl">The webhook url.</param>
         /// <returns></returns>
-        Person LookupPersonByFacebook(string facebookUsername, int? queue = null, string webhookUrl = null);
+        PersonResponse LookupPersonByFacebook(string facebookUsername, int? queue = null, string webhookUrl = null);
     }
 }
