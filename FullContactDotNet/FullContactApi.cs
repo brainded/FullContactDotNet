@@ -114,9 +114,6 @@ namespace FullContactDotNet
         private RestClient GetClient()
         {
             if (FullContactClient != null) return FullContactClient;
-
-            if (string.IsNullOrEmpty(this.ApiKey)) throw new ApplicationException("An api key is required to communicate with Full Contact.");
-
             FullContactClient = new RestClient(ApiBaseUrl);
             FullContactClient.AddDefaultParameter("apiKey", this.ApiKey);
             return FullContactClient;

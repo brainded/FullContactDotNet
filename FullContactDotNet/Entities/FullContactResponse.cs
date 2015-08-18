@@ -1,4 +1,6 @@
-﻿namespace FullContactDotNet.Entities
+﻿using System.Net;
+
+namespace FullContactDotNet.Entities
 {
     public class FullContactResponse
     {
@@ -8,7 +10,7 @@
         /// <value>
         /// The status.
         /// </value>
-        public int Status { get; set; }
+        public HttpStatusCode Status { get; set; }
 
         /// <summary>
         /// Gets or sets the request identifier.
