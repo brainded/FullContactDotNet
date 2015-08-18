@@ -64,9 +64,10 @@
     <Compile Include="Entities\Topic.cs" />
     <Compile Include="Entities\Website.cs" />
     <Compile Include="FullContactApi.cs" />
+    <Compile Include="FullContactPersonApi.cs" />
     <Compile Include="FullContactApiException.cs" />
     <Compile Include="FullContactConfiguration.cs" />
-    <Compile Include="IFullContactApi.cs" />
+    <Compile Include="IFullContactPersonApi.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

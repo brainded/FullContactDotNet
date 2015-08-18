@@ -2,7 +2,7 @@
 
 namespace FullContactDotNet
 {
-    public interface IFullContactApi
+    public interface IFullContactPersonApi
     {
         /// <summary>
         /// Lookup Person by email address.

@@ -6,14 +6,14 @@ using System.Net;
 namespace UnitTests
 {
     [TestClass]
-    public class FullContactApiUnitTests
+    public class FullContactPersonApiUnitTests
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException),
             "FullContactApi was allowed to instantiate without an ApiKey.")]
         public void FullContactApiInitWithNullApiKey()
         {
-            var fullContactApi = new FullContactApi(null);
+            var fullContactPersonApi = new FullContactPersonApi(null);
         }
 
         [TestMethod]
@@ -21,14 +21,14 @@ namespace UnitTests
             "FullContactApi was allowed to instantiate with a blank ApiKey.")]
         public void FullContactApiInitWithBlankApiKey()
         {
-            var fullContactApi = new FullContactApi("   ");
+            var fullContactPersonApi = new FullContactPersonApi("   ");
         }
 
         [TestMethod]
         public void FullContactInitAndLookupEmail()
         {
-            var fullContactApi = new FullContactApi();
-            var actual = fullContactApi.LookupPersonByEmail("adam.dorado@gmail.com");
+            var fullContactPersonApi = new FullContactPersonApi();
+            var actual = fullContactPersonApi.LookupPersonByEmail("adam.dorado@gmail.com");
 
             Assert.AreEqual(actual.Status, HttpStatusCode.OK, "FullContactApi returned an unexpected status looking up a person by email.");
             Assert.AreEqual(actual.ContactInfo.GivenName, "Adam", "FullContactApi returned an unexpected given name looking up a person by email.");
