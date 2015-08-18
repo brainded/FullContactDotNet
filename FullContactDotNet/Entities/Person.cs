@@ -2,10 +2,8 @@
 
 namespace FullContactDotNet.Entities
 {
-    public class Person
+    public class Person : FullContactResponse
     {
-        public int Status { get; set; }
-        public string RequestId { get; set; }
         public double Likelihood { get; set; }
         public List<Photo> Photos { get; set; }
         public ContactInfo ContactInfo { get; set; }

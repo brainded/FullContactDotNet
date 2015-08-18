@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullContactDotNet", "FullCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{A10C5FF4-1CAC-40DF-A436-F5737DBC6A06}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{8123B899-B6D6-4CC2-A268-B2BEE3A03C8F}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\FullContactDotNet.nuspec = nuget\FullContactDotNet.nuspec
+		nuget\nuget.cmd = nuget\nuget.cmd
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

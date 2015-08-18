@@ -1,10 +1,6 @@
 ﻿using FullContactDotNet.Entities;
 using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FullContactDotNet
 {
@@ -12,6 +8,7 @@ namespace FullContactDotNet
     {
         private const string ApiBaseUrl = "https://api.fullcontact.com/v2";
         private string ApiKey;
+        private RestClient FullContactClient;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FullContactApi"/> class.
@@ -81,16 +78,13 @@ namespace FullContactDotNet
         /// <returns></returns>
         private RestClient GetClient()
         {
+            if (FullContactClient != null) return FullContactClient;
+
             if (string.IsNullOrEmpty(this.ApiKey)) throw new ApplicationException("An api key is required to communicate with Full Contact.");
 
-            var client = new RestClient()
-            {
-                BaseUrl = new Uri(ApiBaseUrl)
-            };
-
-            client.AddDefaultParameter("apiKey", this.ApiKey);
-
-            return client;
+            FullContactClient = new RestClient(ApiBaseUrl);
+            FullContactClient.AddDefaultParameter("apiKey", this.ApiKey);
+            return FullContactClient;
         }
 
         /// <summary>
