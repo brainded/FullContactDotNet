@@ -42,10 +42,11 @@ namespace FullContactDotNet
         /// <returns></returns>
         protected RestClient GetClient()
         {
-            if (FullContactClient != null) return FullContactClient;
-            FullContactClient = new RestClient(ApiBaseUrl);
-            FullContactClient.AddDefaultParameter("apiKey", this.ApiKey);
-            return FullContactClient;
+            if (this.FullContactClient != null) return this.FullContactClient;
+            
+            this.FullContactClient = new RestClient(this.ApiBaseUrl);
+            this.FullContactClient.AddDefaultParameter("apiKey", this.ApiKey);
+            return this.FullContactClient;
         }
 
         /// <summary>
