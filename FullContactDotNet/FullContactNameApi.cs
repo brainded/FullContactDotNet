@@ -33,7 +33,7 @@ namespace FullContactDotNet
             if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get a name normalization.");
 
             var request = new RestRequest("/name/normalizer.json", Method.GET);
-            request.AddParameter("name", name);
+            request.AddParameter("q", name);
 
             if (casing.HasValue)
             {
