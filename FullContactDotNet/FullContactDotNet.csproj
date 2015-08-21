@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casing.cs" />
+    <Compile Include="Entities\BigramAnalysis.cs" />
     <Compile Include="Entities\Chat.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
@@ -54,15 +55,23 @@
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\County.cs" />
     <Compile Include="Entities\Demographics.cs" />
+    <Compile Include="Entities\DistanceMeasurement.cs" />
+    <Compile Include="Entities\SimilarityMeasurement.cs" />
     <Compile Include="Entities\DigitalFootprint.cs" />
     <Compile Include="Entities\DisposableEmailResponse.cs" />
+    <Compile Include="Entities\FullContactMetrics.cs" />
     <Compile Include="Entities\FullContactResponse.cs" />
+    <Compile Include="Entities\DistanceMetrics.cs" />
+    <Compile Include="Entities\LevelTwoSimilarityMetrics.cs" />
     <Compile Include="Entities\LocationDeduced.cs" />
     <Compile Include="Entities\NameDetails.cs" />
     <Compile Include="Entities\NameResponse.cs" />
+    <Compile Include="Entities\NameSimilarityResponse.cs" />
     <Compile Include="Entities\Organization.cs" />
     <Compile Include="Entities\Photo.cs" />
+    <Compile Include="Entities\NameSimilarityResult.cs" />
     <Compile Include="Entities\Score.cs" />
+    <Compile Include="Entities\SimilarityMetrics.cs" />
     <Compile Include="Entities\SocialProfile.cs" />
     <Compile Include="Entities\State.cs" />
     <Compile Include="Entities\Topic.cs" />

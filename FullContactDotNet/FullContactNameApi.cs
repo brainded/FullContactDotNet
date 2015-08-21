@@ -76,6 +76,35 @@ namespace FullContactDotNet
         }
 
         /// <summary>
+        /// Gets the name similarity.
+        /// </summary>
+        /// <param name="nameA">The name a.</param>
+        /// <param name="nameB">The name b.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">
+        /// A name is required to get a name similarity.
+        /// or
+        /// A name to compare to is required to get a name similarity.
+        /// </exception>
+        public NameSimilarityResponse GetNameSimilarity(string nameA, string nameB, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(nameA)) throw new ArgumentNullException("A name is required to get a name similarity.");
+            if (string.IsNullOrEmpty(nameB)) throw new ArgumentNullException("A name to compare to is required to get a name similarity.");
+
+            var request = new RestRequest("/name/similarity.json", Method.GET);
+            request.AddParameter("q1", nameA);
+            request.AddParameter("q2", nameB);
+
+            if (casing.HasValue)
+            {
+                request.AddParameter("casing", casing.Value);
+            }
+
+            return Execute<NameSimilarityResponse>(request);
+        }
+
+        /// <summary>
         /// Gets the name deduction.
         /// </summary>
         /// <param name="casing">The casing.</param>
