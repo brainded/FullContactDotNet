@@ -44,7 +44,7 @@ namespace FullContactDotNet
         {
             if (this.FullContactClient != null) return this.FullContactClient;
             
-            this.FullContactClient = new RestClient(this.ApiBaseUrl);
+            this.FullContactClient = new RestClient(ApiBaseUrl);
             this.FullContactClient.AddDefaultParameter("apiKey", this.ApiKey);
             return this.FullContactClient;
         }
