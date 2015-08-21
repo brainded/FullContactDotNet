@@ -3,13 +3,13 @@
   <metadata>
     <id>FullContactDotNet</id>
     <title>FullContactDotNet</title>
-    <version>0.0.2-alpha</version>
+    <version>0.0.3-alpha</version>
     <authors>brainded</authors>
     <owners>brainded</owners>
     <licenseUrl>https://github.com/brainded/FullContactDotNet</licenseUrl>
     <projectUrl>https://github.com/brainded/FullContactDotNet</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A wrapper around the FullContact Restful Api using RestSharp.</description>
+    <description>A C# client for the Full Contact Api.</description>
     <releaseNotes>For release notes please visit the project on GitHub.</releaseNotes>
     <copyright></copyright>
     <tags>FullContact, RestSharp</tags>

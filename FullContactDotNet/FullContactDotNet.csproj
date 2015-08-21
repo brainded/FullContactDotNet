@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Casing.cs" />
     <Compile Include="Entities\Chat.cs" />
     <Compile Include="Entities\City.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
@@ -57,6 +58,8 @@
     <Compile Include="Entities\DisposableEmailResponse.cs" />
     <Compile Include="Entities\FullContactResponse.cs" />
     <Compile Include="Entities\LocationDeduced.cs" />
+    <Compile Include="Entities\NameDetails.cs" />
+    <Compile Include="Entities\NameNormalization.cs" />
     <Compile Include="Entities\Organization.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Entities\Score.cs" />
@@ -66,10 +69,12 @@
     <Compile Include="Entities\Website.cs" />
     <Compile Include="FullContactApi.cs" />
     <Compile Include="FullContactEmailApi.cs" />
+    <Compile Include="FullContactNameApi.cs" />
     <Compile Include="FullContactPersonApi.cs" />
     <Compile Include="FullContactApiException.cs" />
     <Compile Include="FullContactConfiguration.cs" />
     <Compile Include="IFullContactEmailApi.cs" />
+    <Compile Include="IFullContactNameApi.cs" />
     <Compile Include="IFullContactPersonApi.cs" />
     <Compile Include="Entities\PersonResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
