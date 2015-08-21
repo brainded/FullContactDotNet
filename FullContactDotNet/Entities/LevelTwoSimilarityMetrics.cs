@@ -26,6 +26,7 @@ namespace FullContactDotNet.Entities
         /// <value>
         /// The level2 jaro winkler.
         /// </value>
+        [DeserializeAs(Name = "level2jaroWinkler")]
         public SimilarityMeasurement Level2JaroWinkler { get; set; }
 
         /// <summary>
@@ -34,6 +35,7 @@ namespace FullContactDotNet.Entities
         /// <value>
         /// The level2levenshtein.
         /// </value>
+        [DeserializeAs(Name = "level2levenshtein")]
         public DistanceMeasurement Level2Levenshtein { get; set; }
     }
 }
