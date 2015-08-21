@@ -1,4 +1,4 @@
-﻿using FullContactDotNet.Entities;
+﻿using FullContactDotNet.Email;
 
 namespace FullContactDotNet
 {

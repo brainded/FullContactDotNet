@@ -1,4 +1,4 @@
-﻿using FullContactDotNet.Entities;
+﻿using FullContactDotNet.Person;
 using RestSharp;
 using System;
 
