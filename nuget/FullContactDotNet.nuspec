@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>FullContactDotNet</id>
     <title>FullContactDotNet</title>
@@ -12,7 +12,7 @@
     <description>A C# client for the Full Contact Api.</description>
     <releaseNotes>For release notes please visit the project on GitHub.</releaseNotes>
     <copyright></copyright>
-    <tags>FullContact, RestSharp</tags>
+    <tags>FullContact RestSharp</tags>
     <dependencies>
       <dependency id="RestSharp" version="105.2.1" />
     </dependencies>
