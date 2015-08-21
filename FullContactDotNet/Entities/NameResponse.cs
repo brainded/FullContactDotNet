@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FullContactDotNet.Entities
 {
-    public class NameNormalizationResponse : FullContactResponse
+    public class NameResponse : FullContactResponse
     {
         /// <summary>
         /// Gets or sets the likelihood.

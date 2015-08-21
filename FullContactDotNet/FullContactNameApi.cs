@@ -28,7 +28,7 @@ namespace FullContactDotNet
         /// <param name="casing">The casing.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentNullException">A name is required to get a name normalization.</exception>
-        public NameNormalizationResponse GetNameNormalization(string name, Casing? casing = null)
+        public NameResponse GetNameNormalization(string name, Casing? casing = null)
         {
             if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get a name normalization.");
 
@@ -40,7 +40,56 @@ namespace FullContactDotNet
                 request.AddParameter("casing", casing.Value);
             }
 
-            return Execute<NameNormalizationResponse>(request);
+            return Execute<NameResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the name deduction by email.
+        /// </summary>
+        /// <param name="emailAddress">The email address.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A email address is required to get a name deduction.</exception>
+        public NameResponse GetNameDeductionByEmail(string emailAddress, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("An email address is required to get a name deduction.");
+
+            var request = GetNameDeduction(casing);
+            request.AddParameter("email", emailAddress);
+            return Execute<NameResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the name deduction by username.
+        /// </summary>
+        /// <param name="username">The username.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A username is required to get a name deduction.</exception>
+        public NameResponse GetNameDeductionByUsername(string username, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(username)) throw new ArgumentNullException("A username is required to get a name deduction.");
+
+            var request = GetNameDeduction(casing);
+            request.AddParameter("username", username);
+            return Execute<NameResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the name deduction.
+        /// </summary>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        private RestRequest GetNameDeduction(Casing? casing = null)
+        {
+            var request = new RestRequest("/name/deducer.json", Method.GET);
+
+            if (casing.HasValue)
+            {
+                request.AddParameter("casing", casing.Value);
+            }
+
+            return request;
         }
     }
 }

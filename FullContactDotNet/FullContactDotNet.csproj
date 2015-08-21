@@ -59,7 +59,7 @@
     <Compile Include="Entities\FullContactResponse.cs" />
     <Compile Include="Entities\LocationDeduced.cs" />
     <Compile Include="Entities\NameDetails.cs" />
-    <Compile Include="Entities\NameNormalization.cs" />
+    <Compile Include="Entities\NameResponse.cs" />
     <Compile Include="Entities\Organization.cs" />
     <Compile Include="Entities\Photo.cs" />
     <Compile Include="Entities\Score.cs" />

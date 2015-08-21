@@ -25,7 +25,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A email address is required to lookup a person by email.</exception>
         public DisposableEmailResponse DetectDisposableEmail(string emailAddress)
         {
-            if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("A email address is required to lookup a person by email.");
+            if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("An email address is required to lookup a person by email.");
 
             var request = new RestRequest("/email.json", Method.GET);
             request.AddParameter("email", emailAddress);
