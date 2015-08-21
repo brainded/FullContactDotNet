@@ -64,6 +64,6 @@
         /// <value>
         /// The likelihood.
         /// </value>
-        public int Likelihood { get; set; }
+        public double Likelihood { get; set; }
     }
 }

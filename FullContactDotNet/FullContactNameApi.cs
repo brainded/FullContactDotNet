@@ -180,6 +180,28 @@ namespace FullContactDotNet
         }
 
         /// <summary>
+        /// Gets the parsed name for a given ambiguous name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A name is required to get a parsed name.</exception>
+        public NameParsedResponse GetNameParsed(string name, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get a parsed name.");
+
+            var request = new RestRequest("/name/parser.json", Method.GET);
+            request.AddParameter("q", name);
+
+            if (casing.HasValue)
+            {
+                request.AddParameter("casing", casing.Value);
+            }
+
+            return Execute<NameParsedResponse>(request);
+        }
+
+        /// <summary>
         /// Gets the name deduction request.
         /// </summary>
         /// <param name="casing">The casing.</param>

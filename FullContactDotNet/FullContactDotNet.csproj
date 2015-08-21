@@ -62,6 +62,8 @@
     <Compile Include="Entities\GivenNameStats.cs" />
     <Compile Include="Entities\Mode.cs" />
     <Compile Include="Entities\NameAndStats.cs" />
+    <Compile Include="Entities\NameParsed.cs" />
+    <Compile Include="Entities\NameParsedResponse.cs" />
     <Compile Include="Entities\NameStatsBase.cs" />
     <Compile Include="Entities\NameStatsResponse.cs" />
     <Compile Include="Entities\Quartiles.cs" />
