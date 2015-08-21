@@ -54,7 +54,7 @@ namespace FullContactDotNet
         {
             if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("An email address is required to get a name deduction.");
 
-            var request = GetNameDeduction(casing);
+            var request = GetNameDeductionRequest(casing);
             request.AddParameter("email", emailAddress);
             return Execute<NameResponse>(request);
         }
@@ -70,7 +70,7 @@ namespace FullContactDotNet
         {
             if (string.IsNullOrEmpty(username)) throw new ArgumentNullException("A username is required to get a name deduction.");
 
-            var request = GetNameDeduction(casing);
+            var request = GetNameDeductionRequest(casing);
             request.AddParameter("username", username);
             return Execute<NameResponse>(request);
         }
@@ -105,13 +105,109 @@ namespace FullContactDotNet
         }
 
         /// <summary>
-        /// Gets the name deduction.
+        /// Gets the stats of a name.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A name is required to get name stats.</exception>
+        public NameStatsResponse GetNameStatsByName(string name, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get name stats.");
+
+            var request = GetNameStatsRequest(casing);
+            request.AddParameter("name", name);
+
+            return Execute<NameStatsResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the stats of a given and family name.
+        /// </summary>
+        /// <param name="givenName">The given name.</param>
+        /// <param name="familyName">The family name.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">
+        /// A given name is required to get name stats.
+        /// or
+        /// A family name is required to get name stats.
+        /// </exception>
+        public NameStatsResponse GetNameStatsByName(string givenName, string familyName, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(givenName)) throw new ArgumentNullException("A given name is required to get name stats.");
+            if (string.IsNullOrEmpty(familyName)) throw new ArgumentNullException("A family name is required to get name stats.");
+
+            var request = GetNameStatsRequest(casing);
+            request.AddParameter("givenName", givenName);
+            request.AddParameter("familyName", familyName);
+
+            return Execute<NameStatsResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the stats of a given name.
+        /// </summary>
+        /// <param name="givenName">The given name.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A given name is required to get name stats.</exception>
+        public NameStatsResponse GetNameStatsByGivenName(string givenName, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(givenName)) throw new ArgumentNullException("A given name is required to get name stats.");
+
+            var request = GetNameStatsRequest(casing);
+            request.AddParameter("givenName", givenName);
+
+            return Execute<NameStatsResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the stats of a family name.
+        /// </summary>
+        /// <param name="familyName">The family name.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        /// <exception cref="System.ArgumentNullException">A family name is required to get name stats.</exception>
+        public NameStatsResponse GetNameStatsByFamilyName(string familyName, Casing? casing = null)
+        {
+            if (string.IsNullOrEmpty(familyName)) throw new ArgumentNullException("A family name is required to get name stats.");
+
+            var request = GetNameStatsRequest(casing);
+            request.AddParameter("familyName", familyName);
+
+            return Execute<NameStatsResponse>(request);
+        }
+
+        /// <summary>
+        /// Gets the name deduction request.
         /// </summary>
         /// <param name="casing">The casing.</param>
         /// <returns></returns>
-        private RestRequest GetNameDeduction(Casing? casing = null)
+        private RestRequest GetNameDeductionRequest(Casing? casing = null)
         {
-            var request = new RestRequest("/name/deducer.json", Method.GET);
+            return GetNameRequest("deducer");
+        }
+
+        /// <summary>
+        /// Gets the name stats request.
+        /// </summary>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        private RestRequest GetNameStatsRequest(Casing? casing = null)
+        {
+            return GetNameRequest("stats");
+        }
+
+        /// <summary>
+        /// Gets the name request.
+        /// </summary>
+        /// <param name="resource">The resource.</param>
+        /// <param name="casing">The casing.</param>
+        /// <returns></returns>
+        private RestRequest GetNameRequest(string resource, Casing? casing = null)
+        {
+            var request = new RestRequest(string.Format("/name/{0}.json", resource), Method.GET);
 
             if (casing.HasValue)
             {

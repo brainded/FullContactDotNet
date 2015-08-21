@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casing.cs" />
+    <Compile Include="Entities\Age.cs" />
     <Compile Include="Entities\BigramAnalysis.cs" />
     <Compile Include="Entities\Chat.cs" />
     <Compile Include="Entities\City.cs" />
@@ -55,7 +56,16 @@
     <Compile Include="Entities\Country.cs" />
     <Compile Include="Entities\County.cs" />
     <Compile Include="Entities\Demographics.cs" />
+    <Compile Include="Entities\DensityCurve.cs" />
     <Compile Include="Entities\DistanceMeasurement.cs" />
+    <Compile Include="Entities\FamilyNameStats.cs" />
+    <Compile Include="Entities\GivenNameStats.cs" />
+    <Compile Include="Entities\Mode.cs" />
+    <Compile Include="Entities\NameAndStats.cs" />
+    <Compile Include="Entities\NameStatsBase.cs" />
+    <Compile Include="Entities\NameStatsResponse.cs" />
+    <Compile Include="Entities\Quartiles.cs" />
+    <Compile Include="Entities\Sex.cs" />
     <Compile Include="Entities\SimilarityMeasurement.cs" />
     <Compile Include="Entities\DigitalFootprint.cs" />
     <Compile Include="Entities\DisposableEmailResponse.cs" />
