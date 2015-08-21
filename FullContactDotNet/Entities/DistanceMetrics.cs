@@ -30,6 +30,6 @@ namespace FullContactDotNet.Entities
         /// <value>
         /// The time actual.
         /// </value>
-        public int TimeActual { get; set; }
+        public double TimeActual { get; set; }
     }
 }
