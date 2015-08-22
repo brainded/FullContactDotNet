@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AccountStatsResponse.cs" />
+    <Compile Include="Account\Metric.cs" />
     <Compile Include="Casing.cs" />
+    <Compile Include="FullContactAccountApi.cs" />
+    <Compile Include="IFullContactAccountApi.cs" />
     <Compile Include="Name\Age.cs" />
     <Compile Include="Name\BigramAnalysis.cs" />
     <Compile Include="Person\Chat.cs" />
