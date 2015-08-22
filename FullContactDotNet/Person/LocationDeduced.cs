@@ -24,7 +24,7 @@
         /// <value>
         /// The city.
         /// </value>
-        public City City { get; set; }
+        public DeducedName City { get; set; }
 
         /// <summary>
         /// Gets or sets the state.
@@ -32,7 +32,7 @@
         /// <value>
         /// The state.
         /// </value>
-        public State State { get; set; }
+        public DeducedNameAndCode State { get; set; }
 
         /// <summary>
         /// Gets or sets the country.
@@ -40,7 +40,7 @@
         /// <value>
         /// The country.
         /// </value>
-        public Country Country { get; set; }
+        public DeducedNameAndCode Country { get; set; }
 
         /// <summary>
         /// Gets or sets the continent.
@@ -48,7 +48,7 @@
         /// <value>
         /// The continent.
         /// </value>
-        public Continent Continent { get; set; }
+        public DeducedName Continent { get; set; }
 
         /// <summary>
         /// Gets or sets the county.
@@ -56,7 +56,7 @@
         /// <value>
         /// The county.
         /// </value>
-        public County County { get; set; }
+        public DeducedNameAndCode County { get; set; }
 
         /// <summary>
         /// Gets or sets the likelihood.

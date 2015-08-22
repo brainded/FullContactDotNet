@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FullContactDotNet.Company
+﻿namespace FullContactDotNet.Shared
 {
     public class SocialProfile
     {
@@ -41,20 +35,20 @@ namespace FullContactDotNet.Company
         public string Url { get; set; }
 
         /// <summary>
-        /// Gets or sets the username.
-        /// </summary>
-        /// <value>
-        /// The username.
-        /// </value>
-        public string Username { get; set; }
-
-        /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>
         /// The identifier.
         /// </value>
         public string Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the username.
+        /// </summary>
+        /// <value>
+        /// The username.
+        /// </value>
+        public string Username { get; set; }
 
         /// <summary>
         /// Gets or sets the followers.

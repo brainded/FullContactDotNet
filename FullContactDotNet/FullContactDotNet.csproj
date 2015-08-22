@@ -58,7 +58,9 @@
     <Compile Include="Company\Organization.cs" />
     <Compile Include="Company\PhoneNumber.cs" />
     <Compile Include="Company\Ranking.cs" />
-    <Compile Include="Company\SocialProfile.cs" />
+    <Compile Include="Person\DeducedName.cs" />
+    <Compile Include="Person\DeducedNameAndCode.cs" />
+    <Compile Include="Shared\SocialProfile.cs" />
     <Compile Include="Company\Traffic.cs" />
     <Compile Include="FullContactAccountApi.cs" />
     <Compile Include="FullContactCompanyApi.cs" />
@@ -67,11 +69,7 @@
     <Compile Include="Name\Age.cs" />
     <Compile Include="Name\BigramAnalysis.cs" />
     <Compile Include="Person\Chat.cs" />
-    <Compile Include="Person\City.cs" />
     <Compile Include="Person\ContactInfo.cs" />
-    <Compile Include="Person\Continent.cs" />
-    <Compile Include="Person\Country.cs" />
-    <Compile Include="Person\County.cs" />
     <Compile Include="Person\Demographics.cs" />
     <Compile Include="Name\DensityCurve.cs" />
     <Compile Include="Name\DistanceMeasurement.cs" />
@@ -101,8 +99,6 @@
     <Compile Include="Name\NameSimilarityResult.cs" />
     <Compile Include="Person\Score.cs" />
     <Compile Include="Name\SimilarityMetrics.cs" />
-    <Compile Include="Person\SocialProfile.cs" />
-    <Compile Include="Person\State.cs" />
     <Compile Include="Person\Topic.cs" />
     <Compile Include="Person\Website.cs" />
     <Compile Include="FullContactApi.cs" />

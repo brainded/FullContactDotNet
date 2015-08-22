@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FullContactDotNet.Shared;
+using System.Collections.Generic;
 
 namespace FullContactDotNet.Person
 {
