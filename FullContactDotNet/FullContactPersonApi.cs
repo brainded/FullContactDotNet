@@ -27,7 +27,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A email address is required to lookup a person by email.</exception>
         public PersonResponse LookupPersonByEmail(string emailAddress, int? queue = null, string webhookUrl = null)
         {
-            if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("A email address is required to lookup a person by email.");
+            if (string.IsNullOrWhiteSpace(emailAddress)) throw new ArgumentNullException("A email address is required to lookup a person by email.");
 
             var request = GetPersonRequest(queue, webhookUrl);
             request.AddParameter("email", emailAddress);
@@ -45,7 +45,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A phone number is required to lookup a person by twitter.</exception>
         public PersonResponse LookupPersonByPhone(string phoneNumber, string countryCode = null, int? queue = null, string webhookUrl = null)
         {
-            if (string.IsNullOrEmpty(phoneNumber)) throw new ArgumentNullException("A phone number is required to lookup a person by twitter.");
+            if (string.IsNullOrWhiteSpace(phoneNumber)) throw new ArgumentNullException("A phone number is required to lookup a person by twitter.");
 
             //TODO: investigate if the phone number needs to be formatted in a particular way
 
@@ -70,7 +70,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A twitter username is required to lookup a person by twitter.</exception>
         public PersonResponse LookupPersonByTwitter(string twitterUsername, int? queue = null, string webhookUrl = null)
         {
-            if (string.IsNullOrEmpty(twitterUsername)) throw new ArgumentNullException("A twitter username is required to lookup a person by twitter.");
+            if (string.IsNullOrWhiteSpace(twitterUsername)) throw new ArgumentNullException("A twitter username is required to lookup a person by twitter.");
 
             var request = GetPersonRequest(queue, webhookUrl);
             request.AddParameter("twitter", twitterUsername);
@@ -87,7 +87,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A facebook username is required to lookup a person by facebook.</exception>
         public PersonResponse LookupPersonByFacebook(string facebookUsername, int? queue = null, string webhookUrl = null)
         {
-            if (string.IsNullOrEmpty(facebookUsername)) throw new ArgumentNullException("A facebook username is required to lookup a person by facebook.");
+            if (string.IsNullOrWhiteSpace(facebookUsername)) throw new ArgumentNullException("A facebook username is required to lookup a person by facebook.");
 
             var request = GetPersonRequest(queue, webhookUrl);
             request.AddParameter("facebookUsername", facebookUsername);
