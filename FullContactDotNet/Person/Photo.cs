@@ -3,14 +3,6 @@
     public class Photo
     {
         /// <summary>
-        /// Gets or sets the type.
-        /// </summary>
-        /// <value>
-        /// The type.
-        /// </value>
-        public string Type { get; set; }
-
-        /// <summary>
         /// Gets or sets the type identifier.
         /// </summary>
         /// <value>
