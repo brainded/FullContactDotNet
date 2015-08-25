@@ -43,18 +43,6 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void FullContactInitAndLookupEmail()
-        {
-            //NOTE: this test will fail until an api key is put into the App.config to authenticate against
-            var fullContactPersonApi = new FullContactPersonApi();
-            var actual = fullContactPersonApi.LookupPersonByEmail("adam.dorado@gmail.com");
-
-            Assert.AreEqual(HttpStatusCode.OK, actual.Status, "FullContactApi returned an unexpected status looking up a person by email.");
-            Assert.AreEqual("Adam", actual.ContactInfo.GivenName, "FullContactApi returned an unexpected given name looking up a person by email.");
-            Assert.AreEqual("Dorado", actual.ContactInfo.FamilyName, "FullContactApi returned an unexpected family name looking up a person by email.");
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(ArgumentNullException),
             "FullContactApi was allowed to query lookup person with a null phone.")]
         public void FullContactInitAndLookupNullPhone()
