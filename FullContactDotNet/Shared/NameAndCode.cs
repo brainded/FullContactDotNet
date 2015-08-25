@@ -1,4 +1,4 @@
-﻿namespace FullContactDotNet.Company
+﻿namespace FullContactDotNet.Shared
 {
     public class NameAndCode
     {

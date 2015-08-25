@@ -1,4 +1,6 @@
-﻿namespace FullContactDotNet.Company
+﻿using FullContactDotNet.Shared;
+
+namespace FullContactDotNet.Company
 {
     public class Address
     {

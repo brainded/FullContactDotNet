@@ -1,4 +1,4 @@
-﻿namespace FullContactDotNet.Person
+﻿namespace FullContactDotNet.Shared
 {
     public class DeducedName
     {

@@ -1,4 +1,6 @@
-﻿namespace FullContactDotNet.Person
+﻿using FullContactDotNet.Shared;
+
+namespace FullContactDotNet.Person
 {
     public class LocationDeduced
     {
