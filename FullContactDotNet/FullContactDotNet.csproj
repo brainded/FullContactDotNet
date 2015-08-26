@@ -48,10 +48,14 @@
   <ItemGroup>
     <Compile Include="Account\AccountStatsResponse.cs" />
     <Compile Include="Account\Metric.cs" />
+    <Compile Include="CardReader\CardReaderResponse.cs" />
     <Compile Include="Casing.cs" />
     <Compile Include="Company\Address.cs" />
+    <Compile Include="FullContactCardReaderApi.cs" />
+    <Compile Include="IFullContactCardReaderApi.cs" />
     <Compile Include="Location\EnrichedLocationResponse.cs" />
     <Compile Include="Location\Location.cs" />
+    <Compile Include="SandboxMode.cs" />
     <Compile Include="Shared\Asset.cs" />
     <Compile Include="Company\CompanyResponse.cs" />
     <Compile Include="Company\ContactInfo.cs" />
