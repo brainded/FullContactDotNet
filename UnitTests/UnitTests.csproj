@@ -53,6 +53,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FullContactCardReaderApiUnitTests.cs" />
     <Compile Include="FullContactLocationApiUnitTests.cs" />
     <Compile Include="FullContactPersonApiUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

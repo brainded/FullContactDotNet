@@ -26,7 +26,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A domain is required to lookup a company.</exception>
         public CompanyResponse LookupCompanyByDomain(string domain, string webhookUrl = null)
         {
-            if (string.IsNullOrEmpty(domain)) throw new ArgumentNullException("A domain is required to lookup a company.");
+            if (string.IsNullOrEmpty(domain)) throw new ArgumentNullException("domain", "A domain is required to lookup a company.");
 
             var request = new RestRequest("/company/lookup.json", Method.GET);
             request.AddParameter("domain", domain);

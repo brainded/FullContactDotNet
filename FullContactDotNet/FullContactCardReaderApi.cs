@@ -33,7 +33,7 @@ namespace FullContactDotNet
             Casing? casing = null,
             SandboxMode? sandbox = null)
         {
-            if (string.IsNullOrWhiteSpace(frontBase64Encoded)) throw new ArgumentException("A front image is required to process a card.");
+            if (string.IsNullOrWhiteSpace(frontBase64Encoded)) throw new ArgumentNullException("frontBase64Encoded", "A front image is required to process a card.");
 
             var request = GetCardReaderRequest(webhookUrl, casing, sandbox);
             request.RequestFormat = DataFormat.Json;
@@ -57,7 +57,7 @@ namespace FullContactDotNet
             Casing? casing = null,
             SandboxMode? sandbox = null)
         {
-            if (front == null || front.Length == 0) throw new ArgumentException("A front image is required to process a card.");
+            if (front == null || front.Length == 0) throw new ArgumentNullException("front", "A front image is required to process a card.");
 
             var request = GetCardReaderRequest(webhookUrl, casing, sandbox);
             request.AddFile("front", front, "front.png|jpg|gif", "image/png|jpg|gif");
@@ -83,7 +83,7 @@ namespace FullContactDotNet
             Casing? casing = null,
             SandboxMode? sandbox = null)
         {
-            if (string.IsNullOrEmpty(webhookUrl)) throw new ArgumentException("A webhook is required to process a card.");
+            if (string.IsNullOrWhiteSpace(webhookUrl)) throw new ArgumentNullException("webhookUrl", "A webhook is required to process a card.");
 
             var request = new RestRequest("/cardReader.json", Method.POST);
             request.AddQueryParameter("webhookUrl", webhookUrl);

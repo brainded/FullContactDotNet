@@ -27,7 +27,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">An email address is required to lookup a person by email.</exception>
         public NormalizedLocationResponse GetNormalizedLocation(string place, bool? includeZeroPopulation = null, Casing? casing = null)
         {
-            if (string.IsNullOrWhiteSpace(place)) throw new ArgumentNullException("A place is required to get a normalized location.");
+            if (string.IsNullOrWhiteSpace(place)) throw new ArgumentNullException("place", "A place is required to get a normalized location.");
 
             var request = GetLocationRequest("locationNormalizer", includeZeroPopulation, casing);
             request.AddParameter("place", place);
@@ -44,7 +44,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A place is required to get a normalized location.</exception>
         public EnrichedLocationResponse GetEnrichedLocation(string place, bool? includeZeroPopulation = null, Casing? casing = null)
         {
-            if (string.IsNullOrWhiteSpace(place)) throw new ArgumentNullException("A place is required to get a enriched location.");
+            if (string.IsNullOrWhiteSpace(place)) throw new ArgumentNullException("place", "A place is required to get a enriched location.");
 
             var request = GetLocationRequest("locationEnrichment", includeZeroPopulation, casing);
             request.AddParameter("place", place);

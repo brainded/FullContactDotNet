@@ -26,7 +26,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A name is required to get a name normalization.</exception>
         public NameResponse GetNameNormalization(string name, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get a name normalization.");
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("name", "A name is required to get a name normalization.");
 
             var request = new RestRequest("/name/normalizer.json", Method.GET);
             request.AddParameter("q", name);
@@ -48,7 +48,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A email address is required to get a name deduction.</exception>
         public NameResponse GetNameDeductionByEmail(string emailAddress, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("An email address is required to get a name deduction.");
+            if (string.IsNullOrEmpty(emailAddress)) throw new ArgumentNullException("emailAddress", "An email address is required to get a name deduction.");
 
             var request = GetNameDeductionRequest(casing);
             request.AddParameter("email", emailAddress);
@@ -64,7 +64,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A username is required to get a name deduction.</exception>
         public NameResponse GetNameDeductionByUsername(string username, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(username)) throw new ArgumentNullException("A username is required to get a name deduction.");
+            if (string.IsNullOrEmpty(username)) throw new ArgumentNullException("username", "A username is required to get a name deduction.");
 
             var request = GetNameDeductionRequest(casing);
             request.AddParameter("username", username);
@@ -85,8 +85,8 @@ namespace FullContactDotNet
         /// </exception>
         public NameSimilarityResponse GetNameSimilarity(string nameA, string nameB, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(nameA)) throw new ArgumentNullException("A name is required to get a name similarity.");
-            if (string.IsNullOrEmpty(nameB)) throw new ArgumentNullException("A name to compare to is required to get a name similarity.");
+            if (string.IsNullOrEmpty(nameA)) throw new ArgumentNullException("nameA", "A name is required to get a name similarity.");
+            if (string.IsNullOrEmpty(nameB)) throw new ArgumentNullException("nameB", "A name to compare to is required to get a name similarity.");
 
             var request = new RestRequest("/name/similarity.json", Method.GET);
             request.AddParameter("q1", nameA);
@@ -109,7 +109,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A name is required to get name stats.</exception>
         public NameStatsResponse GetNameStatsByName(string name, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get name stats.");
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("name", "A name is required to get name stats.");
 
             var request = GetNameStatsRequest(casing);
             request.AddParameter("name", name);
@@ -131,8 +131,8 @@ namespace FullContactDotNet
         /// </exception>
         public NameStatsResponse GetNameStatsByName(string givenName, string familyName, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(givenName)) throw new ArgumentNullException("A given name is required to get name stats.");
-            if (string.IsNullOrEmpty(familyName)) throw new ArgumentNullException("A family name is required to get name stats.");
+            if (string.IsNullOrEmpty(givenName)) throw new ArgumentNullException("givenName", "A given name is required to get name stats.");
+            if (string.IsNullOrEmpty(familyName)) throw new ArgumentNullException("familyName", "A family name is required to get name stats.");
 
             var request = GetNameStatsRequest(casing);
             request.AddParameter("givenName", givenName);
@@ -150,7 +150,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A given name is required to get name stats.</exception>
         public NameStatsResponse GetNameStatsByGivenName(string givenName, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(givenName)) throw new ArgumentNullException("A given name is required to get name stats.");
+            if (string.IsNullOrEmpty(givenName)) throw new ArgumentNullException("givenName", "A given name is required to get name stats.");
 
             var request = GetNameStatsRequest(casing);
             request.AddParameter("givenName", givenName);
@@ -167,7 +167,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A family name is required to get name stats.</exception>
         public NameStatsResponse GetNameStatsByFamilyName(string familyName, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(familyName)) throw new ArgumentNullException("A family name is required to get name stats.");
+            if (string.IsNullOrEmpty(familyName)) throw new ArgumentNullException("familyName", "A family name is required to get name stats.");
 
             var request = GetNameStatsRequest(casing);
             request.AddParameter("familyName", familyName);
@@ -184,7 +184,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">A name is required to get a parsed name.</exception>
         public NameParsedResponse GetNameParsed(string name, Casing? casing = null)
         {
-            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("A name is required to get a parsed name.");
+            if (string.IsNullOrEmpty(name)) throw new ArgumentNullException("name", "A name is required to get a parsed name.");
 
             var request = new RestRequest("/name/parser.json", Method.GET);
             request.AddParameter("q", name);
