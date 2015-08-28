@@ -13,13 +13,17 @@ namespace FullContactDotNet
         /// <param name="webhookUrl">The webhook URL.</param>
         /// <param name="casing">The casing.</param>
         /// <param name="sandbox">The sandbox.</param>
+        /// <param name="verified">The verified.</param>
+        /// <param name="verifiedOnly">The verified only.</param>
         /// <returns></returns>
         CardReaderResponse UploadCard(
             string frontBase64Encoded,
             string backBase64Encoded,
             string webhookUrl,
             Casing? casing = null,
-            SandboxMode? sandbox = null);
+            SandboxMode? sandbox = null,
+            Verified? verified = null,
+            bool? verifiedOnly = null);
 
         /// <summary>
         /// Uploads the card.
@@ -29,12 +33,16 @@ namespace FullContactDotNet
         /// <param name="webhookUrl">The webhook URL.</param>
         /// <param name="casing">The casing.</param>
         /// <param name="sandbox">The sandbox.</param>
+        /// <param name="verified">The verified.</param>
+        /// <param name="verifiedOnly">The verified only.</param>
         /// <returns></returns>
         CardReaderResponse UploadCard(
             byte[] front,
             byte[] back,
             string webhookUrl,
             Casing? casing = null,
-            SandboxMode? sandbox = null);
+            SandboxMode? sandbox = null,
+            Verified? verified = null,
+            bool? verifiedOnly = null);
     }
 }
