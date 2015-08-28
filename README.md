@@ -11,7 +11,7 @@ To use this client you will need an ApiKey from FullContact. Once the ApiKey is 
 
 ## Quick Overview
 
-To get a handle on what FullContact provides check out their [Api documentation](https://www.fullcontact.com/developer/docs/). This project is a work in progress but it does currently provide the Account, Email, Name, Organization and Person Apis.
+To get a handle on what FullContact provides check out their [Api documentation](https://www.fullcontact.com/developer/docs/). This project is a work in progress but it does currently provide the Account, CardReader, Company, Email, Location, Name, and Person Apis.
 
 A quick example of how to use the Api:
 
