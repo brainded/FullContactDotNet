@@ -1,7 +1,6 @@
 ﻿using FullContactDotNet.CardReader;
 using RestSharp;
 using System;
-using System.IO;
 
 namespace FullContactDotNet
 {
@@ -34,6 +33,8 @@ namespace FullContactDotNet
             Casing? casing = null,
             SandboxMode? sandbox = null)
         {
+            if (string.IsNullOrWhiteSpace(frontBase64Encoded)) throw new ArgumentException("A front image is required to process a card.");
+
             var request = GetCardReaderRequest(webhookUrl, casing, sandbox);
             request.RequestFormat = DataFormat.Json;
             request.AddBody(new { front = frontBase64Encoded, back = backBase64Encoded });
@@ -56,12 +57,10 @@ namespace FullContactDotNet
             Casing? casing = null,
             SandboxMode? sandbox = null)
         {
-            var request = GetCardReaderRequest(webhookUrl, casing, sandbox);
+            if (front == null || front.Length == 0) throw new ArgumentException("A front image is required to process a card.");
 
-            if (front != null && front.Length > 0)
-            {
-                request.AddFile("front", front, "front.png|jpg|gif", "image/png|jpg|gif");
-            }
+            var request = GetCardReaderRequest(webhookUrl, casing, sandbox);
+            request.AddFile("front", front, "front.png|jpg|gif", "image/png|jpg|gif");
 
             if (back != null && back.Length > 0)
             {
@@ -84,7 +83,7 @@ namespace FullContactDotNet
             Casing? casing = null,
             SandboxMode? sandbox = null)
         {
-            if (string.IsNullOrEmpty(webhookUrl)) throw new ArgumentNullException("A webhook is required to process a card.");
+            if (string.IsNullOrEmpty(webhookUrl)) throw new ArgumentException("A webhook is required to process a card.");
 
             var request = new RestRequest("/cardReader.json", Method.POST);
             request.AddQueryParameter("webhookUrl", webhookUrl);
