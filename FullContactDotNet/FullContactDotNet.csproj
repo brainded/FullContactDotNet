@@ -48,7 +48,14 @@
   <ItemGroup>
     <Compile Include="Account\AccountStatsResponse.cs" />
     <Compile Include="Account\Metric.cs" />
+    <Compile Include="CardReader\Account.cs" />
+    <Compile Include="CardReader\CardReaderProcessedResponse.cs" />
     <Compile Include="CardReader\CardReaderResponse.cs" />
+    <Compile Include="CardReader\Contact.cs" />
+    <Compile Include="CardReader\Name.cs" />
+    <Compile Include="CardReader\Organization.cs" />
+    <Compile Include="CardReader\Photo.cs" />
+    <Compile Include="CardReader\ValueAndType.cs" />
     <Compile Include="Casing.cs" />
     <Compile Include="Company\Address.cs" />
     <Compile Include="FullContactCardReaderApi.cs" />
