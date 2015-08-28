@@ -45,7 +45,6 @@ namespace FullContactDotNet
             if (this.FullContactClient != null) return this.FullContactClient;
             
             this.FullContactClient = new RestClient(ApiBaseUrl);
-            this.FullContactClient.AddDefaultParameter("apiKey", this.ApiKey);
             return this.FullContactClient;
         }
 
@@ -57,6 +56,9 @@ namespace FullContactDotNet
         /// <returns></returns>
         protected T Execute<T>(RestRequest request) where T : new()
         {
+            //apikey needs to always be a query parameter for full contact, so just add it on before any request execution
+            request.AddQueryParameter("apiKey", ApiKey);
+
             var client = GetClient();
             var response = client.Execute<T>(request);
 
