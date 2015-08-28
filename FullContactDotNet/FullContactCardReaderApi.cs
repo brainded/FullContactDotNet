@@ -1,4 +1,5 @@
 ﻿using FullContactDotNet.CardReader;
+using FullContactDotNet.Shared;
 using RestSharp;
 using System;
 

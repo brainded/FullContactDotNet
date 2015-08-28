@@ -1,4 +1,5 @@
 ﻿using FullContactDotNet.Name;
+using FullContactDotNet.Shared;
 
 namespace FullContactDotNet
 {

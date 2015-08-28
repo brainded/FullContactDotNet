@@ -1,4 +1,5 @@
 ﻿using FullContactDotNet.Location;
+using FullContactDotNet.Shared;
 using RestSharp;
 using System;
 

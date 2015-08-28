@@ -1,4 +1,5 @@
 ﻿using FullContactDotNet.Name;
+using FullContactDotNet.Shared;
 using RestSharp;
 using System;
 

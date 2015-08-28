@@ -1,4 +1,5 @@
 ﻿using FullContactDotNet.CardReader;
+using FullContactDotNet.Shared;
 
 namespace FullContactDotNet
 {

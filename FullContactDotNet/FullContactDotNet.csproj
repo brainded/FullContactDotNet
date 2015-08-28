@@ -56,7 +56,7 @@
     <Compile Include="CardReader\Organization.cs" />
     <Compile Include="CardReader\Photo.cs" />
     <Compile Include="CardReader\ValueAndType.cs" />
-    <Compile Include="Casing.cs" />
+    <Compile Include="Shared\Casing.cs" />
     <Compile Include="Company\Address.cs" />
     <Compile Include="FullContactCardReaderApi.cs" />
     <Compile Include="IFullContactCardReaderApi.cs" />
