@@ -32,7 +32,7 @@ namespace FullContactDotNet
         /// <exception cref="System.ArgumentNullException">An api key is required to communicate with Full Contact.</exception>
         public FullContactApi(string apiKey)
         {
-            if (string.IsNullOrWhiteSpace(apiKey)) throw new ArgumentNullException("An api key is required to communicate with Full Contact.");
+            if (string.IsNullOrWhiteSpace(apiKey)) throw new ArgumentNullException("apiKey", "An api key is required to communicate with Full Contact.");
             ApiKey = apiKey;
         }
 
