@@ -61,10 +61,7 @@ namespace FullContactDotNet
 
             var client = GetClient();
             var response = client.Execute<T>(request);
-
-            //if we encountered a forbidden, the api key is bad so make sure they know
-            if (response.StatusCode == System.Net.HttpStatusCode.Forbidden) throw new FullContactApiException("The FullContact Api request was rejected. The ApiKey is either not set or invalid.");
-
+            
             //if the exception was populated, throw it
             if (response.ErrorException != null) throw new FullContactApiException("The FullContact Api encountered an error. See the Inner Exception for details.", response.ErrorException);
 
