@@ -1,4 +1,4 @@
-%windir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe ..\FullContactDotNet.sln /t:Clean,Rebuild /p:Configuration=Release /fileLogger
+%windir%\Microsoft.NET\Framework\v4.0.30319\msbuild.exe ..\\FullContactDotNet\FullContactDotNet.csproj /t:Clean,Rebuild /p:Configuration=Release /fileLogger
 
 rd /s /q packages
 
